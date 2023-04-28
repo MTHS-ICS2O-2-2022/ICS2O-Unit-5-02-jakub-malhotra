@@ -4,30 +4,21 @@
 // Created on: April 2023
 // This file contains the JS functions for index.html
 
-"use strict"
+
+const randomNumberPos = Math.floor(Math.random() * 6) + 1
+const randomNumberNeg = Math.floor(Math.random() * -6) + 1
 
 /**
- * This function generates a random number between 1 and 6
- */
-const randomPositiveNumber = Math.floor(Math.random() * 6) + 1 // returns a random integer from 1 to 6 into variable "randomNumber"
-
-/**
- *  * This function generates a random number between 1 and 6
- */
-const randomNegativeNumber = Math.floor(Math.random() * 6) + 1 // returns a random integer from 1 to 6 into variable "randomNumber"
-
-/**
- * This function displays the radio value.
+ * This function displays positive and negative number
  */
 function myButtonClicked() {
-  alwaysOnButtonChecked = document.getElementById('on-check').checked
+  buttonOnChecked = document.getElementById("positive-checked").checked
 
-  if (alwaysOnButtonChecked == true) {
+  if (buttonOnChecked == true) {
     document.getElementById("radio-button-value").innerHTML =
-    + randomPositiveNumber +
+      "Your random number is: " + randomNumberPos + "."
   } else {
-
     document.getElementById("radio-button-value").innerHTML =
-    + randomNegativeNumber +
+      "Your random number is: " + randomNumberNeg + "."
   }
 }
